@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock - Multiple Timezones</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1><i class="fas fa-clock"></i> World Clock</h1>
+            <p>View current time across multiple timezones</p>
+        </header>
+
+        <!-- Controls Section -->
+        <section class="controls">
+            <div class="control-group">
+                <label for="timeFormat">Time Format:</label>
+                <select id="timeFormat" class="format-selector">
+                    <option value="24">24-Hour</option>
+                    <option value="12">12-Hour (AM/PM)</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="addTimezone">Add Timezone:</label>
+                <div class="timezone-input-group">
+                    <input 
+                        type="text" 
+                        id="addTimezone" 
+                        placeholder="Search timezone..."
+                        autocomplete="off"
+                    >
+                    <button id="addBtn" class="add-btn"><i class="fas fa-plus"></i></button>
+                </div>
+                <div id="timezoneSuggestions" class="suggestions"></div>
+            </div>
+        </section>
+
+        <!-- Main Clocks Section -->
+        <section class="clocks-section">
+            <div id="clocksContainer" class="clocks-grid">
+                <!-- Clocks will be dynamically added here -->
+            </div>
+        </section>
+
+        <!-- Quick Add Section -->
+        <section class="quick-add-section">
+            <h2>Popular Timezones</h2>
+            <div id="popularTimezones" class="popular-grid">
+                <!-- Popular timezones will be added here -->
+            </div>
+        </section>
+
+        <!-- Digital Display -->
+        <section class="digital-display-section">
+            <h2>Digital Display</h2>
+            <div class="digital-display-container">
+                <div id="mainDisplay" class="main-display">
+                    <div class="main-time">--:--:--</div>
+                    <div class="main-timezone">Local Time</div>
+                </div>
+                <div id="secondaryDisplays" class="secondary-displays">
+                    <!-- Secondary displays will be added here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Analog Clock -->
+        <section class="analog-section">
+            <h2>Analog Clock</h2>
+            <canvas id="analogClock" width="300" height="300"></canvas>
+        </section>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="js/timezones.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
